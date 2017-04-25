@@ -1,0 +1,30 @@
+/* Ссылка для редактирования */
+.edit-link {
+	position: absolute;
+    top: 5px;
+    right: 15px;
+	margin: 0.25em;
+    background-color: #ff7213;
+    border-radius: 50%;
+    font-size: 1.0em;
+    width: 1.75em;
+    height: 1.75em;
+    line-height: 1.75em;
+	padding-left: 0.65rem;
+    color: #fff;
+	z-index:999;
+}
+
+p.error{
+	position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.85em;
+    color: #fff;
+    background: #ff7213;
+    padding: 0px 10px;
+}
+
+#search_form .form-group {
+	margin-bottom:0;
+}

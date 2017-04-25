@@ -1,0 +1,184 @@
+label {
+	display: block;
+}
+
+.pd-top-25{
+	padding-top: 23px;
+}
+
+.right{
+	float: right;
+	margin-bottom: 10px;
+}
+
+.left{
+	float: left;
+	margin-bottom: 10px;
+}
+
+/****************** №, мультидействие *****************/
+tr.filters td:first-child, tr.filters td:nth-child(2){
+	width:30px;
+}
+
+/****************** Actions *****************/
+tr.filters td:last-child{
+	width:90px;
+}
+
+/****************** Active *****************/
+tr.filters td:nth-last-child(2){
+	width:50px;
+}
+
+/****************** Сортировка *****************/
+tr.filters td:nth-last-child(3){
+	width:50px;
+}
+
+/****************** Дата *****************/
+/* tr.filters td:nth-child(3){
+	width:250px;
+} */
+
+img.image-icon {
+	height: 40px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail .glyphicon.glyphicon-remove {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #d0cece;
+}
+
+.mark-menu-item {
+	background: #458c45;
+}
+
+.redactor-toolbar {
+    background: #eee;
+}
+
+table img {
+	max-width:100%;
+}
+
+.gall-image-item {
+	margin: 5px;
+	padding: 10px;
+	border:#ddd solid 1px;
+	border-radius:4px;
+	background:#f5f5f5;
+}
+
+.gall-image-item .thumbnail {
+    margin-bottom: 5px;
+}
+
+.gall-image-item .col-md-3 {
+    padding-right: 0px;
+    padding-left: 15px;
+}
+
+.gall-image-item .col-md-9 {
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+.form-group.form-group-mini {
+	margin-bottom: 3px;
+}
+
+.form-group.form-group-mini label {
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+.form-group.form-group-mini .form-control {
+    height: 24px;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.table-striped > tbody > tr.treegrid-expanded:nth-of-type(odd) {
+    background-color: #fcf8e3;
+}
+
+tr.treegrid-expanded {
+	background-color: #fcf8e3;
+}
+
+.form-control.grid-input{
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: none;
+	background-image: none;
+	background: inherit;
+	border: 1px dotted #aaa;
+	border-radius: 3px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+.form-control.grid-input.middle{
+	width: 200px;
+}
+
+.form-control.grid-input.small{
+	width: 60px;
+	padding-right: 3px;
+}
+
+.form-control.grid-input.right{
+	 text-align: right;
+	 float: right;
+}
+
+.form-control.grid-input.left{
+	text-align: left;
+	float: none;
+}
+
+.form-control.grid-input.center{
+	margin: 0 auto;
+	text-align: left;
+	float: none;
+}
+
+@media (min-width: 992px){
+	.gall-image-item.col-md-2 {
+		width: 18.88666667%;
+	}
+}
+
+@media (min-width: 768px){
+	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+		margin-left: -25px;
+	}
+}
+
+.switcher, .switcher2 {
+	cursor:pointer;
+}

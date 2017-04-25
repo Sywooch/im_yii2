@@ -1,0 +1,537 @@
+.nivoSlider {
+	position:relative;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	max-width: none;
+}
+.nivo-main-image {
+	display: block !important;
+	position: relative !important;
+	width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	background:white;
+	opacity:0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+.nivo-box img { display:block; }
+
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	color:#fff;
+	width:100%;
+	z-index:9;
+	padding: 5px 10px;
+	opacity: 1;
+	overflow: hidden;
+	display: none;
+	box-sizing: border-box;/* Opera/IE 8+ */
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline;
+}
+.nivo-html-caption {
+	display:none;
+}
+
+.slider-content-wrap {
+	position: absolute;
+	max-width: 1140px;
+	height: 100%;
+	width: 100%;
+}
+
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	text-align:center;
+	padding: 15px 0;
+}
+.nivo-controlNav a {
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+.slider-container .nivo-controlNav a.active {
+	background: #f4a137;
+}
+.slider-container5 .nivo-controlNav a.active {
+	background: #4e4e4e;
+}
+
+.slider-container6 .nivo-controlNav a.active {
+	background: #f884ab;
+}
+
+/* ------------------------------
+Default Theme
+---------------------------------*/
+.slider-direction {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	background: none;
+	color: #fff;
+	font-size: 16px;
+	z-index: 9;
+	display: none;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	background:white;
+	opacity:0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+.nivo-box img { display:block; }
+.nivo-caption {
+	height: 100%;
+}
+.nivo-main-image {
+	display: block !important;
+	position: relative !important;
+	width: 100% !important;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+@keyframes myfirst {
+	from {width: 0;}
+	to {width: 100%;}
+}
+.slider-progress.pos_hover{
+	animation-play-state: paused;
+}
+/* ------------------------------
+custom slider
+---------------------------------*/
+.slider-progress{
+	position:absolute;
+	top:0;
+	left:0;
+	background-color: rgba(255, 255, 255, .7);
+	height:5px;
+	animation: myfirst 5000ms ease-in-out;
+}
+.s-tb{
+	display: table;
+	height: 100%;
+	width: 100%;
+	float: left;
+}
+.s-tb-c{
+	display: table-cell;
+	vertical-align: middle;
+}
+.t-cn{text-align: center}
+.t-lft{text-align: left}
+.t-lfr{text-align: right}
+/* custom */
+.nivo-directionNav {
+	opacity: 0;
+}
+.slider-container:hover .nivo-directionNav {
+	opacity: 1;
+}
+.nivo-directionNav a {
+	background: #869791 none repeat scroll 0 0;
+	color: #fff;
+	height: 70px;
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	right: auto;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 300ms ease 0s;
+	width: 35px;
+	z-index: 9;
+	border-radius: 0 5px 5px 0;
+}
+.nivo-directionNav a:hover {
+	background: #444;
+	opacity: 1;
+	color: #fff;
+}
+.nivo-directionNav a.nivo-nextNav {
+	right: 0;
+	left: auto;
+	border-radius: 5px 0 0 5px;
+}
+.nivo-directionNav a i {
+	display: block;
+	font-size: 25px;
+	line-height: 65px;
+	text-align: center;
+}
+/* slide1-text */
+.slider-container .slide1-text {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	margin-top: -100px;
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+}
+.slider-container .slide1-text .desc {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+.slider-container .slide1-text .desc .title-1 {
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 5px;
+	margin-bottom: 12px;
+	text-transform: uppercase;
+	color: #fff;
+}
+.slider-container .slide1-text .desc .title-2 {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+.slider-container .slide1-text .title-2 span,.slider-container .slide1-text .title-3 span{
+	color: #f1f753;
+}
+.slider-container .slide1-text .desc .title-3{
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+}
+/* Control nav styles*/
+.slider-container .nivo-controlNav {
+	bottom: 3%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	text-align: center;
+}
+.slider-container .nivo-controlNav a {
+	border: 2px solid #fff;
+	border-radius: 50%;
+	display: inline-block;
+	font-size: 0;
+	height: 15px;
+	width: 15px;
+	background: transparent none repeat scroll 0 0;
+	margin: 0 3px;
+	position: relative;
+}
+.slider-container .nivo-controlNav a::before {
+	background: #fff;
+	border-radius: 100%;
+	bottom: 3px;
+	content: "";
+	display: block;
+	left: 3px;
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+/* ------------------------------
+ home3
+---------------------------------*/
+.slider-container3 .slide1-text {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	left: 30px;
+	position: absolute;
+	text-align: left;
+	top: 35%;
+	width: 100%;
+	z-index: 999;
+}
+.slider-container3 .slide1-text .desc .title-1 {
+	color: #195477;
+	font-family: inherit;
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+.slider-container3 .slide1-text .desc .title-2 {
+	font-size: 36px;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 45px;
+	position: relative;
+}
+.slider-container3 .slide1-text .desc .title-2 span {
+	color: #ea2c2c;
+}
+.slider-container3 .slide1-text .desc .title-2::after {
+	background: #fff none repeat scroll 0 0;
+	bottom: -20px;
+	content: "";
+	display: block;
+	height: 5px;
+	position: absolute;
+	width: 80px;
+}
+.slider-container3 .slide1-text .desc .title-3 span {
+	color: #ea2c2c;
+}
+.slider-container3 .nivo-controlNav a.active {
+	background: #ea2c2c;
+}
+/* ------------------------------
+ home4
+---------------------------------*/
+.slider-container4 .slide1-text4, .slider-container5 .slide1-text5 {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	color: #fff;
+	font-size: 16px;
+	left: 50%;
+	margin-left: -450px;
+	margin-top: -75px;
+	position: absolute;
+	text-align: center;
+	top: 40%;
+	width: auto;
+	z-index: 999;
+}
+.slider-container4 .slide1-text4 .desc,.slider-container5 .slide1-text5 .desc {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+.slider-container4 .slide1-text4 .desc .title-1 {
+	color: #3d797d;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 6px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	animation: zoomInUp 1500ms ease-in-out;
+}
+.slider-container4 .slide1-text4 .desc .title-2 {
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	animation: zoomInUp 1800ms ease-in-out;
+}
+.slider-container4 .slide1-text4 .desc .cap-title4 {
+	color: #ffea00;
+	display: block;
+	font-size: 36px;
+	font-weight: bold;
+	text-transform: uppercase;
+	animation: zoomInUp 2600ms ease-in-out;
+}
+.slider-container4 .slide1-text4 .desc .cap-title4 span {
+	display: block;
+	font-size: 80px;
+	line-height: 100px;
+}
+.slider-container4 .slide1-text4 .desc .title-3{
+	color: rgba(255, 255, 255, 0.14);
+	font-size: 131px;
+	font-weight: 700;
+	line-height: 1px;
+	position: absolute;
+	text-transform: uppercase;
+	top: 41%;
+	vertical-align: top;
+	animation: zoomInUp 2200ms ease-in-out;
+}
+.slider-container4 .slide1-text4 .desc a.shopnow,.slider-container5 .slide1-text5 .desc a.shopnow {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 11px;
+	margin-left: -27px;
+	margin-top: 30px;
+	position: relative;
+	text-transform: uppercase;
+	animation: bounceInDown 3000ms ease-in-out;
+}
+.slider-container4 .slide1-text4 .desc a.shopnow::after,.slider-container5 .slide1-text5 .desc a.shopnow::after {
+	background: rgba(0, 0, 0, 0) url("../../../images/icons/remor.png") no-repeat scroll center center;
+	content: "";
+	display: block;
+	height: 21px;
+	position: absolute;
+	right: -19px;
+	top: -6px;
+	width: 21px;
+}
+/* ------------------------------
+ home5
+---------------------------------*/
+.slider-container5 .slide1-text5 .desc .title-2 {
+	color: #4e4e4e;
+	font-family: inherit;
+	font-size: 60px;
+	font-weight: 700;
+	letter-spacing: 0;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	animation: zoomInUp 1500ms ease-in-out;
+}
+.slider-container5 .slide1-text5 .desc .title-3 {
+	color: rgba(78, 78, 78, 0.06);
+	font-size: 131px;
+	font-weight: 700;
+	line-height: 76px;
+	text-transform: uppercase;
+	top: 41%;
+	vertical-align: top;
+	animation: zoomInUp 1800ms ease-in-out
+}
+.slider-container5 .slide1-text5 .desc .cap-title5 {
+	color: #4e4e4e;
+	font-size: 36px;
+	font-weight: bold;
+	margin-top: -69px;
+	text-transform: uppercase;
+	animation: zoomInUp 2200ms ease-in-out;
+}
+.slider-container5 .slide1-text5 .desc a.shopnow {
+	color: #4e4e4e;
+}
+.slider-container5 .slide1-text5 .desc a.shopnow::after {
+	background: rgba(0, 0, 0, 0) url("../../../images/icons/remor5.png") no-repeat scroll center center;
+}
+/* home6 */
+.slider-container6 .slide1-text6 {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+    left: 30px;
+    position: absolute;
+    text-align: left;
+    top: 35%;
+    width: 100%;
+    z-index: 999;
+}
+.slider-container6 .slide1-text6 .desc {
+    display: inline-block;
+    height: 100%;
+    position: relative;
+}
+.slider-container6 .slide1-text6 .desc .title-1 {
+    color: #fff;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.slider-container6 .slide1-text6 .desc .title-2 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+}
+.slider-container6 .slide1-text6 .desc .title-3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.slider-container6 .slide1-text6 .desc .shopnow {
+    background: rgba(0, 0, 0, 0) url("../../../images/bg/bg-now.png") no-repeat scroll center center;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 107px;
+}
