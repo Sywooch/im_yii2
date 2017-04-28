@@ -1,14 +1,16 @@
 <?php
 namespace app\modules\fav\controllers;
 
+use app\controllers\FrontendController;
+
 use app\modules\fav\models\Fav;
 use yii\filters\VerbFilter;
 use yii\helpers\Json;
 use yii;
 
-class DefaultController extends \yii\web\Controller
+class DefaultController extends FrontendController
 {
-    public function behaviors()
+   /*  public function behaviors()
     {
         return [
             'verbs' => [
@@ -18,7 +20,7 @@ class DefaultController extends \yii\web\Controller
                 ],
             ],
         ];
-    }
+    } */
 
     public function actionIndex()
     {

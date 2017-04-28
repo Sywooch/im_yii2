@@ -122,7 +122,7 @@ use yii\bootstrap\ActiveForm;
 				<label><input type="checkbox" name="agree" value="1"> Я согласен с использованием моих персональных данных</label>
 			</div>
 			<div class="form-group submit-group">
-				<button type="submit" class="button"><?= $text_reg ?> <img src="/images/blink-blue.gif" class="loading" style="display:none;"></button>
+				<button type="submit" class="button">Сохранить <img src="/images/blink-blue.gif" class="loading" style="display:none;"></button>
 			</div>
 			
 			<p><span class="r">*</span>Все поля обязательны для заполнения</p>
