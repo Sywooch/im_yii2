@@ -7,7 +7,7 @@ use app\components\helpers\Text;
 use app\modules\product\Module;
 
 /********** USE MODELS *********/
-use app\modules\catalog\models\Сatalog;
+use app\modules\catalog\models\Catalog;
 use app\modules\seo\models\Seo;
 use app\modules\file\models\File;
 use app\modules\action\models\Action;
