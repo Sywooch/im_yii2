@@ -23,12 +23,15 @@ class BackendController extends Controller
 	protected $setting;
 	
 	protected $post;
+	protected $errorMessage;
 	
     public function behaviors()
     {
 		$this->siteinfo = Siteinfo::find()->one();
 		$this->view->params['siteinfo'] = $this->siteinfo;
 		$this->view->params['setting'] = [];
+		
+		$this->errorMessage = '';
 		
 		if(isset($this->siteinfo->setting))
 		{

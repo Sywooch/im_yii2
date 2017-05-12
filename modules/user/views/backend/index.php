@@ -9,9 +9,7 @@ use yii\grid\GridView;
 use kartik\date\DatePicker;
 use app\components\widgets\backend\grid\RoleColumn;
 
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\UserSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+use app\modules\user\Module;
 
 $this->title = 'Аккаунт';
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,8 +20,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Создать новую запись', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать новую запись', ['create'], ['class' => 'btn btn-success btn-xs']) ?>
+		<?= Html::button('Сохранить изменения', ['class' => 'btn btn-warning btn-xs right', 'onclick' => 'multiUpdate("update_form")']) ?>
     </p>
+	<?= Html::beginForm('/admin/' . Module::getInstance()->id . '/multi-action', 'post', ['id' => 'update_form']) ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -89,4 +89,5 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
         ],
     ]); ?>
+	<?= Html::endForm()?>
 </div>

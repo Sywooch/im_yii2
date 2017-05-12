@@ -118,9 +118,72 @@ class DefaultController extends BackendController
      */
     public function actionDelete($id)
     {
-		Profile::deleteAll(['user_id' => $id]);
-        $this->findModel($id)->delete();
+		if($this->validateDeleteUser($id))
+		{
+			Profile::deleteAll(['user_id' => $id]);
+			$this->findModel($id)->delete();
+		}
+		else
+		{
+			Yii::$app->getSession()->setFlash('danger', $this->errorMessage);
+		}
         return $this->redirect(['index']);
+    }
+	
+	/**
+     * MULTIDELETE Массовое удаление материалов
+     * MULTIUPDATE Массовое редактирование материалов
+     */
+    public function actionMultiAction()
+    {
+        if($arrKey = Yii::$app->request->post('selection'))
+        {
+            if($arrKey AND is_array($arrKey) AND count($arrKey)>0)
+            {
+                foreach($arrKey as $id)
+                {
+					if($this->validateDeleteUser($id))
+					{
+						Profile::deleteAll(['user_id' => $id]);
+						$this->findModel($id)->delete();
+					}
+					else
+					{
+						Yii::$app->getSession()->setFlash('danger', $this->errorMessage);
+					}
+                }
+            }
+        }
+        if($multiedit = Yii::$app->request->post('multiedit'))
+        {
+            if($multiedit AND is_array($multiedit) AND count($multiedit)>0)
+            {
+                foreach($multiedit as $id => $field)
+                {
+                    if($model = $this->findModelForMultiAction($id))
+                    {
+                        foreach($field as $key => $value)
+                        {
+                            if(isset($field[$key]))
+                            {
+                                $model->{$key} = $value;
+                            }
+                        }
+                        $model->save();
+                    }
+                }
+            }
+        }
+        return $this->redirect(['index']);
+    }
+	
+    protected function findModelForMultiAction($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        } else {
+            return false;
+        }
     }
 	
 	/**
@@ -140,6 +203,7 @@ class DefaultController extends BackendController
             ]);
         }
     }
+	
     /**
      * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -154,5 +218,23 @@ class DefaultController extends BackendController
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+	
+	/**
+     * Проверка удаляемого пользователя.
+     * Нельзя удалить себя и нельзя удалить последнего в системе админа.
+     */
+	protected function validateDeleteUser($id)
+    {
+		$return = true;
+		if(Yii::$app->user->identity->id == $id){
+			$return = false;
+			$this->errorMessage .= '<p>'.Yii::$app->user->identity->username.' - Удаление невозможно, так как вы авторизованы как этот пользователь.</p>';
+		}
+        if (User::find()->where(['role' => 'admin'])->count() < 2) {
+            $return = false;
+			$this->errorMessage .= '<p>'.Yii::$app->user->identity->username.' - Удаление невозможно, так как в системе не должено оставаться меньше одного администратора.</p>';
+        }
+		return $return;
     }
 }

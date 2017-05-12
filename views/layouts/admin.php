@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use app\assets\AdminAsset;
-use app\components\widgets\Alert;
+use yii\bootstrap\Alert;
 
 AdminAsset::register($this);
 
@@ -85,7 +85,14 @@ AdminAsset::register($this);
 			'homeLink' => false,
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-		<?= Alert::widget() ?>
+		<?php foreach (Yii::$app->session->getAllFlashes() as $key => $message): ?>
+			<?= Alert::widget([
+				'options' => [
+				'class' => 'alert-'.$key,
+				],
+				'body' => $message,
+			]) ?>
+		<?php endforeach; ?>
         <?= $content ?>
     </div>
 </div>

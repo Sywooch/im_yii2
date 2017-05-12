@@ -68,6 +68,32 @@ class Text
 		return $value;
 	}
 	
+	public static function _toString($array = [])
+	{
+		$string = '';
+		if($array && !empty($array))
+		{
+			foreach($array as $key => $value)
+			{
+				$string .= '<p>'.$key;
+				
+				if(is_array($value))
+				{
+					foreach($value as $item)
+					{
+						$string .= ' - '.$item.'<br>';
+					}
+				}
+				else
+				{
+					$string .= ' - '.$value;
+				}
+				$string .= '</p>';
+			}
+		}
+		return $string;
+	}
+	
 	public static function _date($date, $delimiter = '.', $out_delimiter = ' ', $postfix = 'г.', $lang_id = 1)
 	{
 		$new_format_date = '';
